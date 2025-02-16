@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/classify.iml" filepath="$PROJECT_DIR$/.idea/classify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../pythonProject/.idea/pythonProject.iml" filepath="$PROJECT_DIR$/../../pythonProject/.idea/pythonProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../ssd-pytorch-master/.idea/ssd-pytorch-master.iml" filepath="$PROJECT_DIR$/../../ssd-pytorch-master/.idea/ssd-pytorch-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ssd_pytorch/.idea/ssd_pytorch.iml" filepath="$PROJECT_DIR$/../ssd_pytorch/.idea/ssd_pytorch.iml" />
+    </modules>
+  </component>
+</project>
