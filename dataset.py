@@ -21,9 +21,10 @@ import matplotlib.pyplot as plt
 #                                                        transform = self.trans, download=True)
 #         return mnist_train, mnist_test
 
+
 class Load_my_datasets(object):
     def __init__(self, train_path, val_path):
-        normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  ##Imagenet中的图片的均值与方差。
+        normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  # Imagenet中的图片的均值与方差。
         self.trans = transforms.Compose([transforms.CenterCrop((224, 224)),
                                          transforms.RandomHorizontalFlip(p=0.5),
                                          transforms.RandomVerticalFlip(p=0.5),
@@ -37,8 +38,6 @@ class Load_my_datasets(object):
         val_dataset = torchvision.datasets.ImageFolder(root=self.val_path, transform=self.trans)
 
         return train_dataset, val_dataset
-
-
 
 
 if __name__ == "__main__":

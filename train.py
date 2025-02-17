@@ -11,13 +11,14 @@ from IPython import display
 from net import LeNet, AlexNet, VGG, NiN, resnet, convnext
 import dataset
 
+
 def plot_image(num, i, train_loss_his, val_loss_his, train_his_acc, val_his_acc, num_epochs):
     plt.figure(num = num)
     # plt.ion()
     # plt.cla()
     ax1 = plt.subplot2grid((1, 2), (0, 0), colspan=1, rowspan=1)
     ax1.set_xlim((0, num_epochs))
-    #ax1.set_ylim(0, 1.6)
+    # ax1.set_ylim(0, 1.6)
     ax1.plot(range(i + 1), train_loss_his, label='train_loss')
     ax1.plot(range(i + 1), val_loss_his, label='val_loss')
     ax1.grid()
@@ -38,6 +39,7 @@ def plot_image(num, i, train_loss_his, val_loss_his, train_his_acc, val_his_acc,
     # plt.ioff()
     # plt.show()
 
+
 def statistics_confusion(y_true, y_predict, class_num):
     """
         输出的混淆矩阵的每一行是预测类别的，列是真实类别的。
@@ -46,7 +48,7 @@ def statistics_confusion(y_true, y_predict, class_num):
     """for i in range(10):#代表类别
         for j in range(len(y_val_hat1)):#代表元素下表
             if y_val_hat1[j] == i and label_val[j] == i:
-                confusion[i][i] += 1 
+                confusion[i][i] += 1
     for j in range(len(y_val_hat1)):
         if y_val_hat1[j] != label_val[j]:
             confusion[y_val_hat1[j]][label_val[j]] += 1"""
@@ -54,6 +56,7 @@ def statistics_confusion(y_true, y_predict, class_num):
     for i in range(len(y_true)):
         confusion[y_predict[i]][y_true[i]] += 1
     return confusion
+
 
 # -------------------------------------------------------------------------#
 #   choice_net  要与下面的choice_net的值是一样的，作为全局变量是为了dataset文件中
@@ -183,7 +186,7 @@ if __name__ == "__main__":
                 confusion_train = confusion_train + a
 
             # 在进度条最后加精度与损失
-            if (k == len(loop_1)-1):
+            if (k == len(loop_1) - 1):
                 loop_1.set_postfix(train_acc = ((train_acc * 1.0) / len(train)).cpu(),
                                    train_loss = ((train_loss * 1.0) / len(train)).cpu())
         for j in range(class_num):
